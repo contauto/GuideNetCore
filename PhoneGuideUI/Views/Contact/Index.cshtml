@@ -1,0 +1,32 @@
+﻿@model List<Contact>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Number</th>
+        <th>Mail</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ContactName</td>
+            <td>@item.ContactSurname</td>
+            <td>@item.ContactTelNumber</td>
+            <td>@item.ContactEmail</td>
+            <td><a href="/Contact/DeleteContact/@item.ContactId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Contact/EditContact/@item.ContactId" class="btn btn-warning">Update</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Contact/AddContact" class="btn btn-info">New Contact</a>

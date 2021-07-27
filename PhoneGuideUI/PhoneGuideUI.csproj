@@ -1,0 +1,174 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.0.2" />
+    <PackageReference Include="jQuery" Version="3.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="NLog" Version="4.7.10" />
+    <PackageReference Include="NLog.Config" Version="4.7.10" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.13.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Login_v20\css\main.css" />
+    <None Include="wwwroot\Login_v20\css\util.css" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\animated.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\core.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\icons.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\larger.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\list.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\path.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\less\variables.less" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <None Include="wwwroot\Login_v20\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <None Include="wwwroot\Login_v20\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <None Include="wwwroot\Login_v20\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <None Include="wwwroot\Login_v20\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <None Include="wwwroot\Login_v20\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <None Include="wwwroot\Login_v20\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-Black.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-Bold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-Italic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-Light.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-Medium.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-Regular.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-Thin.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\montserrat\OFL.txt" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-Bold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-BoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-ExtraBold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-ExtraBoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-Italic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-Light.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-LightItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-Regular.otf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-Regular.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-SemiBold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-Black.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-Bold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-Italic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-Light.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-LightItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-Medium.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-Regular.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-SemiBold.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-Thin.ttf" />
+    <None Include="wwwroot\Login_v20\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <None Include="wwwroot\Login_v20\images\bg-01.jpg" />
+    <None Include="wwwroot\Login_v20\images\icons\favicon.ico" />
+    <None Include="wwwroot\Login_v20\index.html" />
+    <None Include="wwwroot\Login_v20\js\main.js" />
+    <None Include="wwwroot\Login_v20\vendor\animate\animate.css" />
+    <None Include="wwwroot\Login_v20\vendor\animsition\css\animsition.css" />
+    <None Include="wwwroot\Login_v20\vendor\animsition\css\animsition.min.css" />
+    <None Include="wwwroot\Login_v20\vendor\animsition\js\animsition.js" />
+    <None Include="wwwroot\Login_v20\vendor\animsition\js\animsition.min.js" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap-grid.css" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap.css" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap.css.map" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\js\popper.js" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\js\popper.min.js" />
+    <None Include="wwwroot\Login_v20\vendor\bootstrap\js\tooltip.js" />
+    <None Include="wwwroot\Login_v20\vendor\countdowntime\countdowntime.js" />
+    <None Include="wwwroot\Login_v20\vendor\css-hamburgers\hamburgers.css" />
+    <None Include="wwwroot\Login_v20\vendor\css-hamburgers\hamburgers.min.css" />
+    <None Include="wwwroot\Login_v20\vendor\daterangepicker\daterangepicker.css" />
+    <None Include="wwwroot\Login_v20\vendor\daterangepicker\daterangepicker.js" />
+    <None Include="wwwroot\Login_v20\vendor\daterangepicker\moment.js" />
+    <None Include="wwwroot\Login_v20\vendor\daterangepicker\moment.min.js" />
+    <None Include="wwwroot\Login_v20\vendor\jquery\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\Login_v20\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <None Include="wwwroot\Login_v20\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <None Include="wwwroot\Login_v20\vendor\select2\select2.css" />
+    <None Include="wwwroot\Login_v20\vendor\select2\select2.js" />
+    <None Include="wwwroot\Login_v20\vendor\select2\select2.min.css" />
+    <None Include="wwwroot\Login_v20\vendor\select2\select2.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+  </ItemGroup>
+
+</Project>
