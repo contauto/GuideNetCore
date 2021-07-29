@@ -2,7 +2,7 @@
 
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ListUserContact";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,15 +13,16 @@
 }
 @if (TempData["Deleted"] != null)
 {
-<p class="alert alert-success" id="successMessage">Contact deleted successfully.</p>
+    <p class="alert alert-success" id="successMessage">Contact deleted successfully.</p>
 }
 @if (TempData["Edited"] != null)
 {
-<p class="alert alert-success" id="successMessage">Contact edited successfully.</p>
+    <p class="alert alert-success" id="successMessage">Contact edited successfully.</p>
 }
 
 <table class="table table-striped">
     <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Surname</th>
         <th>Number</th>
@@ -32,6 +33,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>@item.UserId</td>
             <td>@item.ContactName</td>
             <td>@item.ContactSurname</td>
             <td>@item.ContactTelNumber</td>
@@ -42,4 +44,3 @@
     }
 </table>
 <br />
-<a href="/Contact/AddContact" class="btn btn-info">New Contact</a>

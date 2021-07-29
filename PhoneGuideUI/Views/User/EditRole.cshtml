@@ -1,0 +1,41 @@
+﻿@model Entities.Concrete.User
+
+@{
+    ViewData["Title"] = "EditRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit User</h2>
+<br />
+@using (Html.BeginForm("EditRole", "User", FormMethod.Post, new { @class = "was-validated", enctype = "multipart/form-data", id = "contactForm" }))
+{
+    @Html.HiddenFor(x => x.UserPassword, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.UserId, new { @class = "form-control" })
+    <div class="mb-3">
+        <label for="cn" class="form-label">User Name</label>
+        <input required class="form-check-input form-control" id="cn" type="text" name="UserName">
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="cs" class="form-label">User Surname</label>
+        <input required class="form-check-input form-control" id="cs" type="text" name="UserSurname">
+    </div>
+    <br />
+    <div class="mb-3">
+        <label for="pn" class="form-label">User Mail</label>
+        <input class="form-check-input form-control" id="pn" required type="email" name="UserMail">
+    </div>
+    <br />
+    @Html.Label("Role")
+    @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+    <br />
+    <button style="background-color: #4eacdd;" type="submit" class="btn btn-primary">Submit</button>
+}
+
+<br />
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<br />
+<br />

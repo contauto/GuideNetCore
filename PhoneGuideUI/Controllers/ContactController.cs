@@ -22,7 +22,7 @@ namespace PhoneGuideUI.Controllers
         // GET: Contact
         ContactManager cm = new ContactManager(new EfContactDal());
         Context c = new Context();
-        [Authorize]
+        [Authorize(Roles = "Admin,DelAddUpd,AddUpd,DelAdd,DelUpd")]
         
         public ActionResult Index()
         {
@@ -33,8 +33,10 @@ namespace PhoneGuideUI.Controllers
             return View(values);
         }
         [HttpGet]
+        [Authorize(Roles = "Admin,DelAddUpd,AddUpd,DelAdd")]
         public ActionResult AddContact()
         {
+            ViewBag.Success = TempData["Success"] as bool?;
             return View();
         }
         [HttpPost]
@@ -45,11 +47,13 @@ namespace PhoneGuideUI.Controllers
             con.UserId = useridinfo;
             cm.ContactAdd(con);
             _logger.LogInformation("Add Contact");
+            TempData["Added"] = true;
             return RedirectToAction("Index");
             }
-            
+        [Authorize(Roles = "Admin,DelAddUpd,DelAdd,DelUpd")]
         public ActionResult DeleteContact(int id)
         {
+            ViewBag.Success = TempData["Success"] as bool?;
             return View();
         }
         [HttpPost, ActionName("DeleteContact")]
@@ -59,23 +63,38 @@ namespace PhoneGuideUI.Controllers
             var contactvalue = cm.GetById(id);
             cm.ContactDelete(contactvalue);
             _logger.LogInformation("Delete confirmed");
+            TempData["Deleted"] = true;
             return RedirectToAction("Index");
         }
         [HttpGet]
+        [Authorize(Roles = "Admin,DelAddUpd,AddUpd,DelUpd")]
         public ActionResult EditContact(int id)
         {
             var contactvalue = cm.GetById(id);
+            ViewBag.Success = TempData["Success"] as bool?;
             return View(contactvalue);
         }
         [HttpPost]
         public ActionResult EditContact(Contact con)
         {
             string mail = HttpContext.Session.GetString("UserSession");
-            var useridinfo = c.Users.Where(x => x.UserMail == mail).Select(y => y.UserId).FirstOrDefault();
-            con.UserId = useridinfo;
-            cm.ContactUpdate(con);
-            _logger.LogInformation("Contact updated");
-            return RedirectToAction("Index");
+            string role = HttpContext.Session.GetString("AdminSession");
+            if (role == null)
+            {
+                var useridinfo = c.Users.Where(x => x.UserMail == mail).Select(y => y.UserId).FirstOrDefault();
+                con.UserId = useridinfo;
+                cm.ContactUpdate(con);
+                _logger.LogInformation("Contact updated");
+                TempData["Edited"] = true;
+                return RedirectToAction("Index");
+            }
+            else {
+                cm.ContactUpdate(con);
+                _logger.LogInformation("Contact updated");
+                TempData["Edited"] = true;
+                return RedirectToAction("Index", "User");
+            }
         }
+
     }
 }

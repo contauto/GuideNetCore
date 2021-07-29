@@ -33,7 +33,6 @@ namespace PhoneGuideUI
             }
             app.UseSession();
             app.UseStaticFiles();
-
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Entities.Concrete.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin Panel</h2>
+
+@if (TempData["Added1"] != null)
+{
+    <p class="alert alert-success" id="successMessage">User added successfully.</p>
+}
+@if (TempData["Deleted1"] != null)
+{
+    <p class="alert alert-success" id="successMessage">User deleted successfully.</p>
+}
+@if (TempData["Edited1"] != null)
+{
+    <p class="alert alert-success" id="successMessage">User edited successfully.</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                User Name
+            </th>
+            <th>
+                User Surname
+            </th>
+            <th>
+                User Mail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserSurname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserMail)
+                </td>
+                <td>
+                    <a asp-action="EditRole" asp-route-id="@item.UserId">Edit</a> |
+                    <a asp-action="ListUserContact" asp-route-id="@item.UserId">Details</a> |
+                    <a asp-action="DeleteRole" asp-route-id="@item.UserId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

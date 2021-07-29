@@ -14,17 +14,17 @@
 
     <div class="mb-3">
         <label for="cn" class="form-label">Name</label>
-        <input class="form-control" id="cn" type="text" name="ContactName">
+        <input required class="form-check-input form-control" id="cn" type="text" name="ContactName">
     </div>
     <br />
     <div class="mb-3">
         <label for="cs" class="form-label">Surname</label>
-        <input class="form-control" id="cs" type="text" name="ContactSurname">
+        <input required class="form-check-input form-control" id="cs" type="text" name="ContactSurname">
     </div>
     <br />
     <div class="mb-3">
         <label for="pn" class="form-label">Phone Number</label>
-        <input class="form-control" id="pn" type="number" name="ContactTelNumber">
+        <input class="form-check-input form-control" id="pn" required type="number" name="ContactTelNumber">
     </div>
     <br />
     <div class="mb-3">
@@ -32,5 +32,5 @@
         <input class="form-control" id="em" type="email" name="ContactEmail">
     </div>
     <br />
-    <button style="background-color: #4eacdd;" type="submit" onclick="alert('Successful.')" class="btn btn-primary">Submit</button>
+    <button style="background-color: #4eacdd;" type="submit" class="btn btn-primary">Submit</button>
 }

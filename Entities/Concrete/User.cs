@@ -23,5 +23,7 @@ namespace Entities.Concrete
         [StringLength(200)]
         [Required]
         public string UserPassword { get; set; }
+
+        public int RoleId { get; set; }
     }
 }
