@@ -91,7 +91,7 @@ namespace PhoneGuideUI.Controllers
             else {
                 cm.ContactUpdate(con);
                 _logger.LogInformation("Contact updated");
-                TempData["Edited"] = true;
+                TempData["Edited2"] = true;
                 return RedirectToAction("Index", "User");
             }
         }

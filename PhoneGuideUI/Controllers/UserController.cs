@@ -45,7 +45,7 @@ namespace PhoneGuideUI.Controllers
         public ActionResult Index()
         {
             var uservalues = userManager.GetList();
-            _logger.LogInformation("Index page says hello");
+            _logger.LogInformation("Admin Index page says hello");
             return View(uservalues);
         }
         public ActionResult DeleteRole(int id)
