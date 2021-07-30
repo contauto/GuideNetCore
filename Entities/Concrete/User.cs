@@ -12,16 +12,16 @@ namespace Entities.Concrete
         [Key]
         public int UserId { get; set; }
         [StringLength(50)]
-        [Required]
+        [Required(ErrorMessage = "Please enter an username.")]
         public string UserName { get; set; }
         [StringLength(50)]
-        [Required]
+        [Required(ErrorMessage = "Please enter a surname.")]
         public string UserSurname { get; set; }
         [StringLength(250)]
-        [Required]
+        [Required(ErrorMessage = "Please enter an e-mail.")]
         public string UserMail { get; set; }
         [StringLength(200)]
-        [Required]
+        [Required(ErrorMessage = "Please enter a password.")]
         public string UserPassword { get; set; }
 
         public int RoleId { get; set; }

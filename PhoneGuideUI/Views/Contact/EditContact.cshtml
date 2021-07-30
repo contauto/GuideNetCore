@@ -12,24 +12,32 @@
     @Html.HiddenFor(x => x.ContactId, new { @class = "form-control" })
     @Html.HiddenFor(x => x.UserId, new { @class = "form-control" })
 
-    <div class="mb-3">
-        <label for="cn" class="form-label">Name</label>
-        <input required class="form-check-input form-control" id="cn" type="text" name="ContactName">
-    </div>
+<div class="mb-3">
+    <label for="cn" class="form-label">Name</label>
+    <input class="form-check-input form-control" value="@Model.ContactName" id="cn" type="text" name="ContactName">
+    <br />
+    @Html.ValidationMessageFor(x => x.ContactName, null, new { @class = "text-danger" })
+</div>
     <br />
     <div class="mb-3">
         <label for="cs" class="form-label">Surname</label>
-        <input required class="form-check-input form-control" id="cs" type="text" name="ContactSurname">
+        <input class="form-check-input form-control" value="@Model.ContactSurname" id="cs" type="text" name="ContactSurname">
+        <br />
+        @Html.ValidationMessageFor(x => x.ContactSurname, null, new { @class = "text-danger" })
     </div>
     <br />
     <div class="mb-3">
         <label for="pn" class="form-label">Phone Number</label>
-        <input class="form-check-input form-control" id="pn" required type="number" name="ContactTelNumber">
+        <input class="form-check-input form-control" id="pn" value="@Model.ContactTelNumber" type="number" name="ContactTelNumber">
+        <br />
+        @Html.ValidationMessageFor(x => x.ContactTelNumber, null, new { @class = "text-danger" })
     </div>
     <br />
     <div class="mb-3">
         <label for="em" class="form-label">Mail</label>
-        <input class="form-control" id="em" type="email" name="ContactEmail">
+        <input class="form-control" id="em" type="email" value="@Model.ContactEmail" name="ContactEmail">
+        <br />
+        @Html.ValidationMessageFor(x => x.ContactEmail, null, new { @class = "text-danger" })
     </div>
     <br />
     <button style="background-color: #4eacdd;" type="submit" class="btn btn-primary">Submit</button>

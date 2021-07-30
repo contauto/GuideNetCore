@@ -5,6 +5,10 @@
     {
       "library": "limonte-sweetalert2@11.0.20",
       "destination": "wwwroot/lib/limonte-sweetalert2/"
+    },
+    {
+      "library": "jquery-validate@1.19.3",
+      "destination": "wwwroot/jquery-validate/"
     }
   ]
 }

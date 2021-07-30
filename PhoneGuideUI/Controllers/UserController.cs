@@ -36,10 +36,13 @@ namespace PhoneGuideUI.Controllers
         [HttpPost]
         public ActionResult AddUser(User u)
         {
-            
+            if (ModelState.IsValid)
+            {
                 userManager.UserAdd(u);
                 _logger.LogInformation("User added");
-            return RedirectToAction("Login","Login");
+                return RedirectToAction("Login", "Login");
+            }
+            return View(u);
         }
         [Authorize(Roles = "Admin")]
         public ActionResult Index()
@@ -81,11 +84,14 @@ namespace PhoneGuideUI.Controllers
         [HttpPost]
         public ActionResult EditRole(User u)
         {
-
-            userManager.UserUpdate(u);
-            _logger.LogInformation("User updated");
-            TempData["Edited1"] = true;
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                userManager.UserUpdate(u);
+                _logger.LogInformation("User updated");
+                TempData["Edited1"] = true;
+                return RedirectToAction("Index");
+            }
+            return View(u);
         }
         public ActionResult ListUserContact(int id)
         {

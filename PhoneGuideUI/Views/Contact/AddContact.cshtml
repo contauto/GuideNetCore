@@ -6,29 +6,38 @@
 
 <h3 style="color: #4eacdd; font-weight: bold">Add Contact</h3>
 
-
-
-@using (Html.BeginForm("AddContact", "Contact", FormMethod.Post, new { @class = "was-validated", enctype = "multipart/form-data", id = "contactForm" }))
-{
-    <div class="mb-3">
-        <label for="cn" class="form-label">Name</label>
-        <input required class="form-check-input form-control" id="cn" type="text" name="ContactName">
-    </div>
-    <br />
-    <div class="mb-3">
-        <label for="cs" class="form-label">Surname</label>
-        <input required class="form-check-input form-control" id="cs" type="text" name="ContactSurname">
-    </div>
-    <br />
-    <div class="mb-3">
-        <label for="pn" class="form-label">Phone Number</label>
-        <input class="form-check-input form-control" id="pn" required  type="number" name="ContactTelNumber">
-    </div>
-    <br />
-    <div class="mb-3">
-        <label for="em" class="form-label">Mail</label>
-        <input class="form-control" id="em" type="email" name="ContactEmail">
-    </div>
-    <br />
-    <button style="background-color: #4eacdd;" type="submit" class="btn btn-primary">Submit</button>
-}
+    @using (Html.BeginForm("AddContact", "Contact", FormMethod.Post, new { @class = "was-validated", enctype = "multipart/form-data", id = "contactForm" }))
+    {
+        <div class="mb-3">
+            <label for="cn" class="form-label">Name</label>
+            <input class="form-check-input form-control"  id="cn" type="text" placeholder="Name" name="ContactName">
+            <br />
+            @Html.ValidationMessageFor(x => x.ContactName, null, new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="mb-3">
+            <label for="cs" class="form-label">Surname</label>
+            <input class="form-check-input form-control" id="cs" placeholder="Surname" type="text" name="ContactSurname">
+            <br />
+            @Html.ValidationMessageFor(x => x.ContactSurname, null, new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="mb-3">
+            <label for="pn" class="form-label">Phone Number</label>
+            <input class="form-check-input form-control" id="pn" placeholder="Number" type="number" name="ContactTelNumber">
+            <br />
+            @Html.ValidationMessageFor(x => x.ContactTelNumber, null, new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="mb-3">
+            <label for="em" class="form-label">Mail</label>
+            <input class="form-control" id="em" type="email" placeholder="Mail" name="ContactEmail">
+            <br />
+            @Html.ValidationMessageFor(x => x.ContactEmail, null, new { @class = "text-danger" })
+        </div>
+        <br />
+        <button style="background-color: #4eacdd;" type="submit" class="btn btn-primary">Submit</button>
+    }
+<script>$(document).ready(function () {
+    $("#contactForm").validate();
+    });</script>

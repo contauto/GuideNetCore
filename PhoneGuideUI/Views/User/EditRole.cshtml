@@ -11,19 +11,25 @@
 {
     @Html.HiddenFor(x => x.UserPassword, new { @class = "form-control" })
     @Html.HiddenFor(x => x.UserId, new { @class = "form-control" })
-    <div class="mb-3">
-        <label for="cn" class="form-label">User Name</label>
-        <input required class="form-check-input form-control" id="cn" type="text" name="UserName">
-    </div>
+<div class="mb-3">
+    <label for="cn" class="form-label">User Name</label>
+    <input class="form-check-input form-control" value="@Model.UserName" id="cn" type="text" name="UserName">
+    <br />
+    @Html.ValidationMessageFor(x => x.UserName, null, new { @class = "text-danger" })
+</div>
     <br />
     <div class="mb-3">
         <label for="cs" class="form-label">User Surname</label>
-        <input required class="form-check-input form-control" id="cs" type="text" name="UserSurname">
+        <input class="form-check-input form-control" value="@Model.UserSurname" id="cs" type="text" name="UserSurname">
+        <br />
+        @Html.ValidationMessageFor(x => x.UserSurname, null, new { @class = "text-danger" })
     </div>
     <br />
     <div class="mb-3">
         <label for="pn" class="form-label">User Mail</label>
-        <input class="form-check-input form-control" id="pn" required type="email" name="UserMail">
+        <input class="form-check-input form-control" id="pn" value="@Model.UserMail" type="email" name="UserMail">
+        <br />
+        @Html.ValidationMessageFor(x => x.UserPassword, null, new { @class = "text-danger" })
     </div>
     <br />
     @Html.Label("Role")

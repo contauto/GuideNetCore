@@ -45,10 +45,14 @@ namespace PhoneGuideUI.Controllers
             string mail = HttpContext.Session.GetString("UserSession");
             var useridinfo = c.Users.Where(x => x.UserMail == mail).Select(y => y.UserId).FirstOrDefault();
             con.UserId = useridinfo;
-            cm.ContactAdd(con);
-            _logger.LogInformation("Add Contact");
-            TempData["Added"] = true;
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                cm.ContactAdd(con);
+                _logger.LogInformation("Add Contact");
+                TempData["Added"] = true;
+                return RedirectToAction("Index");
+            }
+            return View(con);
             }
         [Authorize(Roles = "Admin,DelAddUpd,DelAdd,DelUpd")]
         public ActionResult DeleteContact(int id)
@@ -83,16 +87,24 @@ namespace PhoneGuideUI.Controllers
             {
                 var useridinfo = c.Users.Where(x => x.UserMail == mail).Select(y => y.UserId).FirstOrDefault();
                 con.UserId = useridinfo;
-                cm.ContactUpdate(con);
-                _logger.LogInformation("Contact updated");
-                TempData["Edited"] = true;
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    cm.ContactUpdate(con);
+                    _logger.LogInformation("Contact updated");
+                    TempData["Edited"] = true;
+                    return RedirectToAction("Index");
+                }
+                return View(con);
             }
             else {
-                cm.ContactUpdate(con);
-                _logger.LogInformation("Contact updated");
-                TempData["Edited2"] = true;
-                return RedirectToAction("Index", "User");
+                if (ModelState.IsValid)
+                {
+                    cm.ContactUpdate(con);
+                    _logger.LogInformation("Contact updated");
+                    TempData["Edited2"] = true;
+                    return RedirectToAction("Index", "User");
+                }
+                return View(con);
             }
         }
 

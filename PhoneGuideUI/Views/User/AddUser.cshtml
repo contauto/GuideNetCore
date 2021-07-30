@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@model User
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +14,7 @@
 
     <!-- Title Page-->
     <title>Sign in</title>
-
+    <link href="~/perth/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Icons font CSS-->
     <link href="/colorlib-regform-5/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="/colorlib-regform-5/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -41,14 +44,17 @@
                             <div class="row row-space">
                                 <div class="col-2">
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="UserName">
-                                        <label class="label--desc">first name</label>
+                                        <input class="input--style-5" type="text" placeholder="First Name" name="UserName">
+
+                                        <br />
+                                        @Html.ValidationMessageFor(x => x.UserName, null, new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="UserSurname">
-                                        <label class="label--desc">last name</label>
+                                        <input class="input--style-5" type="text" placeholder="Last Name" name="UserSurname">
+                                        <br />
+                                        @Html.ValidationMessageFor(x => x.UserSurname, null, new { @class = "text-danger" })
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +64,9 @@
                         <div class="name">Mail</div>
                         <div class="value">
                             <div class="input-group">
-                                <input class="input--style-5" type="email" name="UserMail">
+                                <input class="input--style-5" type="email" placeholder="Mail" name="UserMail">
+                                <br />
+                                @Html.ValidationMessageFor(x => x.UserMail, null, new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -66,7 +74,9 @@
                         <div class="name">Password</div>
                         <div class="value">
                             <div class="input-group">
-                                <input class="input--style-5" type="password" name="UserPassword">
+                                <input class="input--style-5" type="password" placeholder="Password" name="UserPassword">
+                                <br />
+                                @Html.ValidationMessageFor(x => x.UserPassword, null, new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -84,7 +94,7 @@
     <script src="/colorlib-regform-5/vendor/select2/select2.min.js"></script>
     <script src="/colorlib-regform-5/vendor/datepicker/moment.min.js"></script>
     <script src="/colorlib-regform-5/vendor/datepicker/daterangepicker.js"></script>
-
+    <script src="~/perth/js/bootstrap.min.js"></script>
     <!-- Main JS-->
     <script src="/colorlib-regform-5/js/global.js"></script>
 
